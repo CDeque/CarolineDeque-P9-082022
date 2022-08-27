@@ -147,14 +147,17 @@ export default class {
       $(`#status-bills-container${this.index}`).html(
         cards(filteredBills(bills, getStatus(this.index)))
       );
+
       this.counter++;
+      console.log(this.counter, this.index);
     } else {
       $(`#arrow-icon${this.index}`).css({ transform: "rotate(90deg)" });
       $(`#status-bills-container${this.index}`).html("");
       this.counter++;
     }
 
-    bills.forEach((bill) => {
+    // TO enable admin to click en differents tickets in different lists
+    filteredBills(bills, getStatus(this.index)).forEach((bill) => {
       $(`#open-bill${bill.id}`).click((e) =>
         this.handleEditTicket(e, bill, bills)
       );
