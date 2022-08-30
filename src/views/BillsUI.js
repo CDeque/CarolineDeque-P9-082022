@@ -25,7 +25,6 @@ const rows = (data) => {
     ? data
         .sort((a, b) => {
           if (a.date > b.date) {
-            console.log(data);
             return -1;
           }
         })
