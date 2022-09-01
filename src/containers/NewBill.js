@@ -28,7 +28,7 @@ export default class NewBill {
     formData.append("file", file);
     formData.append("email", email);
     // Checking in the file format is png, jpeg, jpg, if not clearing input and stopping validation
-    if (fileName.match(".png" || ".jpeg" || ".jpg")) {
+    if (fileName.match(".png" | ".jpeg" | ".jpg")) {
       this.store
         .bills()
         .create({
@@ -42,8 +42,7 @@ export default class NewBill {
           this.billId = key;
           this.fileUrl = fileUrl;
           this.fileName = fileName;
-        })
-        .catch((error) => console.error(error));
+        });
     } else {
       e.target.value = "";
       alert("Veuillez ajouter un fichier .png, .jpeg, .jpg");
