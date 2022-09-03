@@ -27,7 +27,7 @@ export default class NewBill {
     const email = JSON.parse(localStorage.getItem("user")).email;
     formData.append("file", file);
     formData.append("email", email);
-    // Checking in the file format is png, jpeg, jpg, if not clearing input and stopping validation
+    // Checking in the file format is png, jpeg, jpg, if not clearing input
     if (fileName.match(".png" || ".jpeg" || ".jpg")) {
       this.store
         .bills()
